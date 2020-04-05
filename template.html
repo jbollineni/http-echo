@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>HTTP Echo</title>
+
+    <!-- CSS (load bootstrap from a CDN) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <style>
+        body    { padding-top:50px; }
+    </style>
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <span class="glyphicon glyphicon glyphicon-tree-deciduous"></span>
+                    HTTP Echo Page
+                </a>
+                <ul class="nav navbar-nav">
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <body class="container">
+
+        <main>
+            <div class="jumbotron">
+                <h2>Host Information</h2>
+                <br />Hostname : {{.HostName}}<br />
+                <br />Interface IP : {{.InterfaceIP}}<br />
+
+                <h2>Connection Information</h2>
+                <br />Source IP : {{.SourceIP}}<br />
+                <br />Source DNS PTR : {{.SourceDNSPtr}} <br />
+                <br />Source Port : {{.SourcePort}} <br />
+                <br />Host Header : {{.HostHeader}} <br />
+                <br />X-LB-Name : {{.HTTPXLbName}} <br />
+                <br />X-Forwarded-For : {{.HTTPXff}} <br />
+                <br />User-Agent : {{.HTTPUserAgent}} <br />
+
+            </div>
+        </main>
+
+    </body>
+</html>
