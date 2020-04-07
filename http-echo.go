@@ -61,13 +61,15 @@ func echo(w http.ResponseWriter, r *http.Request) {
                         SourceDNSPtr:  httpSrcAddrPtr,
                         SourcePort:    httpSourcePort,
                         HostHeader:    httpHost,
-						HTTPXLbName:   httpXLbName,
+			HTTPXLbName:   httpXLbName,
                         HTTPUserAgent: httpUserAgent,
                 }
                 t.Execute(w, data)
 
         }
 }
+
+//Following code is from https://play.golang.org/p/BDt3qEQ_2H
 
 func interfaceIP() (string, error) {
         ifaces, err := net.Interfaces()
@@ -103,5 +105,5 @@ func interfaceIP() (string, error) {
                         return ip.String(), nil
                 }
         }
-        return "", errors.New("are you connected to the network?")
+        return "", errors.New("Network Connection issue!")
 }						
