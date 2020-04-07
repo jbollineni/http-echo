@@ -61,7 +61,8 @@ func echo(w http.ResponseWriter, r *http.Request) {
                         SourceDNSPtr:  httpSrcAddrPtr,
                         SourcePort:    httpSourcePort,
                         HostHeader:    httpHost,
-			HTTPXLbName:   httpXLbName,
+                        HTTPXLbName:   httpXLbName,
+                        HTTPXff:       httpXff
                         HTTPUserAgent: httpUserAgent,
                 }
                 t.Execute(w, data)
